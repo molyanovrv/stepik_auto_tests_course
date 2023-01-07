@@ -4,6 +4,7 @@ import time
 import unittest
 
 def scenario(link):
+    browser = webdriver.Chrome()
     browser.get(link)
     time.sleep(1)
 
@@ -44,8 +45,8 @@ class TestText(unittest.TestCase):
     print("===")
     self.assertEqual("Congratulations! You have successfully registered!", h1, f'Has no congrat on {link}')
 
-#main prog: 
-browser = webdriver.Chrome()
-unittest.main()
-# закрываем браузер после всех манипуляций
-browser.quit()
+
+if __name__ == "__main__":
+  unittest.main()
+  # закрываем браузер после всех манипуляций
+  browser.quit()
